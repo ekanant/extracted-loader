@@ -1,4 +1,5 @@
 const path = require("path");
+const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const exportPathMap = require("./routes").exportPathMap;
 
@@ -32,6 +33,22 @@ module.exports = {
         }
       ]
     });
+
+    if (!dev) {
+      /**
+       * Optimize css in production mode
+       */
+      if (!Array.isArray(config.optimization.minimizer)) {
+        config.optimization.minimizer = [];
+      }
+      config.optimization.minimizer.push(
+        new OptimizeCssAssetsWebpackPlugin({
+          cssProcessorOptions: {
+            discardComments: { removeAll: true }
+          }
+        })
+      );
+    }
 
     config.module.rules.push({
       test: /\.(sa|sc|c)ss$/,
