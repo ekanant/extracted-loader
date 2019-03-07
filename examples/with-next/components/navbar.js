@@ -1,39 +1,39 @@
-import React from 'react'
-import FaPencil from 'react-icons/lib/fa/pencil'
+import React from "react";
+import { FaPencilAlt } from "react-icons/fa";
 
-import Link from './link'
+import Link from "./link";
 
 export default () => (
-  <nav className='navbar'>
-    <div className='container'>
-      <div className='navbar-brand'>
-        <Link href='/'>
-          <a className='navbar-item'>
-            <img src={require('../static/logo.png')} alt='Logo' />
+  <nav className="navbar">
+    <div className="container">
+      <div className="navbar-brand">
+        <Link href="/">
+          <a className="navbar-item">
+            <img src={require("../static/logo.png")} alt="Logo" />
           </a>
         </Link>
-        <span className='navbar-burger burger' data-target='navbarMenuHero'>
+        <span className="navbar-burger burger" data-target="navbarMenuHero">
           <span />
           <span />
           <span />
         </span>
       </div>
-      <div id='navbarMenuHero' className='navbar-menu'>
-        <div className='navbar-end'>
-          <Link href='/'>
-            <a className='navbar-item'>Home</a>
+      <div id="navbarMenuHero" className="navbar-menu">
+        <div className="navbar-end">
+          <Link href="/">
+            <a className="navbar-item">Home</a>
           </Link>
-          <Link href='/examples/'>
-            <a className='navbar-item'>Examples</a>
+          <Link href="/examples/">
+            <a className="navbar-item">Examples</a>
           </Link>
-          <Link href='/docs/'>
-            <a className='navbar-item'>Documentation</a>
+          <Link href="/docs/">
+            <a className="navbar-item">Documentation</a>
           </Link>
-          <span className='navbar-item'>
-            <Link href='/editor/'>
-              <a className='button is-info is-inverted'>
-                <span className='icon'>
-                  <FaPencil />
+          <span className="navbar-item">
+            <Link href="/editor/">
+              <a className="button is-info is-inverted">
+                <span className="icon">
+                  <FaPencilAlt />
                 </span>
                 <span>Editor</span>
               </a>
@@ -43,4 +43,4 @@ export default () => (
       </div>
     </div>
   </nav>
-)
+);
