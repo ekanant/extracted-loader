@@ -84,9 +84,12 @@ module.exports = {
     config.plugins.push(
       new MiniCssExtractPlugin({
         filename: dev
-          ? "static/chunks/index.css"
-          : "static/chunks/" + buildId + ".css",
-        allChunks: true
+          ? "static/chunks/[name].css"
+          : "static/chunks/[name].[contenthash:8].css",
+        chunkFilename: dev
+          ? "static/chunks/[name].chunk.css"
+          : "static/chunks/[name].[contenthash:8].chunk.css",
+        hot: dev
       })
     );
 
